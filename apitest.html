@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing YT API</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 id="videoSearch">Video Search</h1>
+    <form id="videos">
+      <label for="video-input">Search for a video!</label>
+      <input type="text" id="video-input">
+      <input id="add-video" type="submit" value="Search">
+      
+    </form>
+    <br>
+    <br>
+    <br>
+
+    <h2>Search Query</h2>
+    <h3 id="search-query"></h3>
+    <br>
+    <br>
+    
+    <h2>Video Title</h2>
+    <h3 id="video-title"></h3>
+    <br>
+    <br>
+    <h2>Thumbnail</h2>
+    <img id="my-image">
+
+    <h3 id="thumbHolder"></h3>
+      <img id="thumb-image"></img>
+      <div id="showPic"></div>
+
+    <script type="text/javascript">
+
+    console.log($("#videos"));
+
+    $("#add-video").on("click", function(event) {
+        event.preventDefault();
+
+        var keyword = $("#video-input").val().trim();
+
+      
+
+      var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + keyword + "&key=AIzaSyAgkup2SVnY6rHhvTA1q8l54cgKpAu5Zyk";
+
+      //Ajax call
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+
+        var title = response.items[0].snippet.title;
+
+
+        //retreives image
+        var thumbUrl = response.items[0].snippet.thumbnails.default.url;
+        
+        //holds the image
+        var thumbImage = $("#my-image").attr("src", thumbUrl)
+
+        //var thumbPic = $("<img src='thumbURL'></img>");
+
+        console.log(response);
+
+        console.log(thumbImage);
+        
+
+        console.log(response.items[0].snippet.title);
+
+        console.log(title);
+
+        console.log(thumbUrl);
+
+
+
+        var queryDisplay = $("#search-query").text("Terms searched: " + keyword);
+
+        var titleDisplay = $("#video-title").text(title);      
+
+      })
+
+      
+      })
+
+      
+
+        
+
+
+          
+    
+    </script>
+    
+</body>
+</html>
