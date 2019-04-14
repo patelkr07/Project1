@@ -1,9 +1,11 @@
 .jumbotron{
     text-align: center;
+    height: 250px;
+    background-image: url(http://yousimplybetter.com/wp-content/uploads/2013/09/fixing-300x300.jpg);
 }
-.container-grid{
-    text-align: center;
+.navbar{
+    margin-top: -40px;
 }
-#search{
-    float: right;
+#navbarSupportedContent{
+    padding-left: 10px;
 }
