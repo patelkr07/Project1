@@ -2,7 +2,7 @@
 * {
     box-sizing: border-box;
   }
-  body{
+  .indexbody{
     background-image: url(https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,10 +16,11 @@
     color: blue;
   }
  
+ 
 .topnav {
   overflow: hidden;
   background-color: cyan;
-  margin-top: -30px;
+  margin-top: -35px;
 }
 
 .topnav a {
@@ -78,6 +79,17 @@
     padding: 10px 0 10px 0;
     text-align: center;
  }
+   /* Youtube html starts here */
+   .youtubebody{
+    
+  }
+
+
+ #jumbotronyoutube{
+  background-image: url(https://www.staticwhich.co.uk/media/images/trusted-trader/desktop-main/computer-repair-top-tips-416737.jpg);
+  background-repeat: no-repeat;
+  background-size: initial;
+  }
   
   @media only screen and (max-width:600px) {
     /* For mobile phones: */
@@ -106,4 +118,8 @@
       display: block;
       text-align: left;
     }
+  }
+  /* Youtube html starts here */
+  .youtubebody{
+    
   }
