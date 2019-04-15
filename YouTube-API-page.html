@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube</title>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <h1 id="videoSearch">Video Resources</h1>
+    <form id="videos">
+        <label for="video-input">Search for a video!</label>
+        <input type="text" id="video-input">
+        <input id="add-video" type="submit" value="Search">
+    </form>
+    <br>
+    <br>
+    <br>
+    <h3 id="video-title"></h3>
+    <br>
+    <img id="my-image1"></img>
+    <br>
+    <img id="my-image2"></img>
+    <br>
+    <img id="my-image3"></img>
+    <br>
+    <img id="my-image4"></img>
+    <br>
+    <img id="my-image5"></img>
+
+    <img id="thumb-image1"></img>
+    <br>
+    <img id="thumb-image2"></img>
+    <br>
+    <img id="thumb-image3"></img>
+    <br>
+    <img id="thumb-image4"></img>
+    <br>
+    <img id="thumb-image5"></img>
+
+    <div id="showPic"></div>
+
+    <script type="text/javascript">
+    
+    $("#add-video").on("click", function(event) {
+        event.preventDefault();
+
+        var keyword = $("#video-input").val().trim();
+
+    var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + keyword + "&key=AIzaSyAgkup2SVnY6rHhvTA1q8l54cgKpAu5Zyk";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+
+        var title1 = response.items[0].snippet.title;
+
+        var title2 = response.items[1].snippet.title;
+
+        var title3 = response.items[2].snippet.title;
+
+        var title4 = response.items[3].snippet.title;
+        
+        var title5 = response.items[4].snippet.title;
+
+        var thumbUrl1 = response.items[0].snippet.thumbnails.default.url;
+
+        var thumbUrl2 = response.items[1].snippet.thumbnails.default.url;
+
+        var thumbUrl3 = response.items[2].snippet.thumbnails.default.url;
+
+        var thumbUrl4 = response.items[3].snippet.thumbnails.default.url;
+
+        var thumbUrl5 = response.items[4].snippet.thumbnails.default.url;
+    
+
+
+
+        var thumbImage1 = $("#my-image1").attr("src", thumbUrl1);
+
+        var thumbImage2 = $("#my-image2").attr("src", thumbUrl2);
+
+        var thumbImage3 = $("#my-image3").attr("src", thumbUrl3);
+
+        var thumbImage4 = $("#my-image4").attr("src", thumbUrl4);
+
+        var thumbImage5 = $("#my-image5").attr("src", thumbUrl5);
+
+        console.log(response)
+
+    })
+    })
+    
+    
+    </script>
+
+</body>
+</html>
