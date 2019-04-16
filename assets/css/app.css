@@ -3,28 +3,28 @@
     box-sizing: border-box;
   }
   .indexbody{
-    background-image: url(https://images.unsplash.com/photo-1534398079543-7ae6d016b86a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: azure;
 
   }
   .jumbotron{
     text-align: center;
-    background-image: url(https://images.unsplash.com/photo-1534190239940-9ba8944ea261?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80);
+    background-image: url(https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-repeat: no-repeat;
     background-size: cover;
     color: blue;
   }
  
- 
-.topnav {
+#navbar {
   overflow: hidden;
-  background-color: cyan;
+  background-color: azure;
   margin-top: -35px;
-  
+  border: 2px solid red;
+  border-radius: 5px;
 }
 
-.topnav a {
+#navbar a {
   float: left;
   display: block;
   color:black;
@@ -36,26 +36,27 @@
   font-weight: bold;
 }
 
-.topnav a:hover {
+#navbar a:hover {
   background-color: rgb(126, 111, 111);
   color: black;
 }
 
 
-.topnav .icon {
+#navbar .icon {
   display: none;
 }
   .main {
-    float:left;
-    width:60%;
+    /* float:left; */
+    width:100%;
     padding:0 20px;
+    padding-top: 10px;
   }
   .dropbtn {
     color: black;
     padding: 14px;
     font-size: 16px;
     border: none;
-    background-color: cyan;
+    background-color:azure;
   }
   
   .dropdown {
@@ -66,15 +67,15 @@
   
   .dropdown-content {
     display: none;
-    position: absolute;
+    /* position: absolute; */
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
   
   .dropdown-content a {
-    color: blue;
+    color: rgb(149, 149, 236);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -82,12 +83,27 @@
   
   .dropdown-content a:hover {background-color: rgb(126, 111, 111)}
   
-  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropdown-content {display: inline-block;}
   
   .dropdown:hover .dropbtn {background-color: rgb(126, 111, 111)}
   .fas{
   font-size: 36px;
   }
+.pictures{
+width: 100%;
+height: auto;
+padding-bottom: 20px;
+float: right;
+
+}
+img{
+width: 250px;
+height: 250px;
+float: right;
+margin: 10px;
+background-color: azure;
+}
+  
 
   .footer {
     position: fixed;
@@ -107,27 +123,27 @@
   
   @media only screen and (max-width:600px) {
     /* For mobile phones: */
-    .menu, .main, .right  ul.topnav li.right, 
-    ul.topnav li, .dropbtn{float: none;
+    .menu, .main, .right  ul#navbar li.right, 
+    ul#navbar li, .dropdown-content{float: none;
       width:100%;}
     
   }
   @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}
-    .topnav a.icon{
+    #navbar a:not(:first-child) {display: none;}
+    #navbar a.icon{
       float: right;
       display: block;
     }
   }
   
   @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon{
+    #navbar.responsive {position: relative;}
+    #navbar.responsive .icon{
       position: absolute;
       right: 0;
       top: 0;
     }
-    .topnav.responsive a {
+    #navbar.responsive a {
       float: none;
       display: block;
       text-align: left;
