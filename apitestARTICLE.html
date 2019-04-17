@@ -9,11 +9,23 @@
   crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 id="testid1"></h1>
+    
+
+    <h2><form id="diyarticles">
+            <label for="article-input">DIY article search</label>
+            <input type="text" id="article-input">
+            <input id="add-article" type="submit" value="Search">
+    </form></h2>
+
     <br>
-    <h2 id="testid2"></h2>
     <br>
-    <h3 id="testid3"></h3>
+    <br>
+
+    <h2>Article Title</h2>
+    <h3 id="article-title"></h3>
+    <br>
+    <h2>Article Text</h2>
+    <h3 id="article-text"></h3>
     <br>
 
     <script type="text/javascript">
@@ -28,10 +40,28 @@
             url: queryURL,
             method: "GET"
         }).then(function(response) {
+
+            var title = response.objects[0].title;
+
+            var articletext = response.objects[0].text;
+
+            
         
             console.log(response);
 
-        })
+            console.log(response.objects[0].title)
+
+            console.log(title);
+
+            console.log(articletext);
+
+            $("#article-title").text(title);
+
+            $("#article-text").text(articletext);
+
+            
+
+        });
 
 
     
