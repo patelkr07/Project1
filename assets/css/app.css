@@ -119,7 +119,8 @@ h2{
   font-size: 20px;
 }
 .row{
-  margin: 5px;
+  margin: 15px;
+
 }
 video{
   border: 1px solid red;
@@ -147,9 +148,7 @@ video{
   font-weight: bold;
   
 }
-#faq{
-  
-}
+
 
 /* contact css starts here */
 input[type=text], select, textarea {
@@ -185,12 +184,15 @@ input[type=submit]:hover {
 
 }
 h3{
-  margin-left: 45rem;
-  margin-top: 15rem;
+  margin-top: 4rem;
   font-family: 'Times New Roman', Times, serif;
   font-weight: bold;
 }
-
+#faq{
+}
+.container3{
+  font-size: 12px;
+}
   .footer {
     position: sticky;
     left: 0;
@@ -209,7 +211,7 @@ h3{
   
   @media only screen and (max-width:600px) {
     /* For mobile phones: */
-    .menu, .main, .right  ul#navbar li.right, 
+    .main, .ul#navbar, .container, .articleP, .row, #container2,
     ul#navbar li, .dropdown-content{float: none;
       width:100%;}
     

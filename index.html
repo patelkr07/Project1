@@ -27,7 +27,7 @@
   </div>
 
 
-  <div id="navbar">
+  <div id="navbar" class="myNavbar">
     <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
     <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
     <a href="#container2"><i class="fa fa-fw fa-envelope"></i> Contact</a>
@@ -150,8 +150,9 @@
   </div>
   <div class="row">
     <div class="col-6">
-      <h2>FAQ</h2>
+
       <div id="faq">
+        <h2>FAQ</h2>
         <ul>
           <li><b>Question:</b> How do we add our videos to this website?</li>
           <p><b>Answer:</b> You can send us an email buy using filling out the contact section..</p>
@@ -211,6 +212,15 @@
 
 
   </div>
+  <div class="container3">
+    <h2 id="about">About</h2>
+    <p>This page has been created by three developer candidate. Our purpose to create this website is to help people to
+      fix their own items/devices. You can ask and look for help or help others by uploading your videos or
+      articles-guides to this website. You will need just to send us an email and ask us to upload it for you. We want
+      this website to be a social one which people can go and search about whatever they would like to know. Any kind of
+      unappropriate videos will not be uploaded and will be ignored. </p>
+
+  </div>
 
 
   <div class="footer">© copyright project1.com</div>
@@ -218,11 +228,11 @@
 
   <script>
     function myFunction() {
-      var x = document.getElementById("navbar");
-      if (x.className === "navbar") {
+      var x = document.getElementsById("navbar");
+      if (x.className === "myNavbar") {
         x.className += " responsive";
       } else {
-        x.className = "navbar";
+        x.className = "myNavbar";
       }
     }
   </script>
