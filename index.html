@@ -1,76 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
-    <title>Document</title>
-    <body class="indexbody">
-    <div class="jumbotron" id="jumbotronindex">
-        <h1>Project1</h1> 
-        <p>Fix your onw devices...</p> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body class="indexbody">
+  <div class="jumbotron" id="jumbotronindex">
+    <h1>Project1</h1>
+    <p>Fix your items/devices yourself...</p>
+  </div>
+
+
+  <div id="navbar" class="myNavbar">
+    <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="#container2"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="#about"><i class="far fa-address-card"></i> About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-tools"></i></button>
+      <div class="dropdown-content">
+        <a href="youtube.html">Youtube Videos</a>
+        <a href="guides.html">Articles&Guides</a>
+        <a href="tools.html">Tools&Needs</a>
+        <a href="specialist.html">Specialists</a>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="main">
+    <h2>Lorum Ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+      dolore magna aliquam erat volutpat.</p>
+  </div><br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <img class="firstImages" src="https://www.tubefilter.com/wp-content/uploads/2018/12/youtube-logo.jpg" alt="">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+          Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+      <div class="col-3">
+        <img class="firstImages" src="http://www.censorlab.tau.ac.il/wp-content/uploads/2018/07/research.png" alt="">
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+          looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+          letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+          desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+          search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved
+          over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+      </div>
+      <div class="col-3">
+        <img class="firstImages"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeYOTCXax-ZnKFewcndUbZCj6g9XxQ7VVA9RgKhqGgcfajOTOvOQ"
+          alt="">
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+          in some form, by injected humour, or randomised words which don't look even slightly believable. If you are
+          going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+          middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
+          necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin
+          words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+          The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic
+          words etc.</p>
+      </div>
+      <div class="col-3">
+        <img class="firstImages" src="http://www.wscha.org/wp-content/uploads/2015/03/repairs-n-maintenance2.jpg"
+          alt="">
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+          in some form, by injected humour, or randomised words which don't look even slightly believable. If you are
+          going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+          middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
+          necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin
+          words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.
+          The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic
+          words etc.</p>
+      </div>
+    </div>
+  </div>
+  <p class="shortInfo">Do you want to fix your item by yourself? This website will help you to fix your own items or
+    devices.
+    You can fix them by watching our Youtube Videos. Do you need more info? You can read from our Articles and Guides.
+    You can also search for needed tools through our Tools page and find the meterials/tools we have choosen for you.
+  </p> <br>
+  <h2>Learn How To Fix By Watching Our <a href="youtube.html">Youtube Videos</a>...</h2>
+  <br>
+  <div class="row">
+    <div class="col-3">
+      <video width="300" height="300" controls src="watch.mp4" type="video.mp4"></video>
+    </div>
+    <div class="col-3">
+      <video width="300" height="300" controls src="Car Service Station.mp4" type="video.mp4"></video>
+    </div>
+    <div class="col-3">
+      <video width="300" height="300" controls src="cool.mp4" type="video.mp4"></video>
+    </div>
+    <div class="col-3">
+      <video width="300" height="300" controls src="cool1.mp4" type="video.mp4"></video>
+    </div>
+  </div>
+  <br>
+  <h2>Learn How To Fix By Reading Our Articles and Guides...</h2>
+  <div class="row" id="article">
+    <div class="col-3">
+      <img class="secondImages" src="https://www.howtogeek.com/wp-content/uploads/2018/01/shutterstock_577454221.jpg"
+        alt="">
+      <p class="articleP"> <a href="guides.html">How do I fix my phone?</a></p>
+    </div>
+    <div class="col-3">
+      <img class="secondImages"
+        src="https://citizenwatchserv.com/wp-content/uploads/2017/12/home-repair-battery-images.jpg" alt="">
+      <p class="articleP"> <a href="guides.html">Is it easy to fix my watch or clock?</a></p>
+    </div>
+    <div class="col-3">
+      <img class="secondImages" src="http://www.psi-repair.com/images/services/Electronic/ElectronicRepair2.jpg" alt="">
+      <p class="articleP"> <a href="guides.html">Can I repair my computer?</a></p>
+    </div>
+    <div class="col-3">
+      <img class="secondImages" src="https://www.wenatcheeautoservice.com/Images/banner-3.jpg" alt="">
+      <p class="articleP"> <a href="guides.html">Do you pay too much for your car repair?</a></p>
+    </div>
+    <button class="guideButton"><a href="guides.html">Click for more researches!</a></button>
+    <br>
+
+
+  </div>
+  <div class="row">
+    <div class="col-6">
+
+      <div id="faq">
+        <h2>FAQ</h2>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email buy using filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email buy using filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email buy using filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email buy using filling out the contact section..</p>
+        </ul>
+        <ul>
+
+          <input type="text" id="question" name="ask" placeholder="ask a question..">
+          <input type="submit" value="Submit">
+
+        </ul>
+
       </div>
 
-      <div id="navbar">
-          <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
-          <a href="#news"><i class="fas fa-question-circle"></i> FAQ</a>
-          <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-          <a href="#about"><i class="far fa-address-card"></i> About</a>
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
-          <div class="dropdown">
-            <button class="dropbtn"><i class="fas fa-tools"></i></button>
-            <div class="dropdown-content">
-              <a href="youtube.html">Youtube Videos</a>
-              <a href="guides.html">Articles&Guides</a>
-              <a href="tools.html">Tools&Needs</a>
-              <a href="specialist.html">Specialists</a>
-              
-            </div>
-          </div>
-        </div>
-       
-
-  <div style="overflow:auto">
-    <div class="main">
-      <h2>Lorum Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-    </div><br>
-    
-    <div class="pictures">
-      <img src="https://www.tradebit.com/usr/manual-store/pub/9002/275584489_XESOZB_L_KEIBHX.jpg" alt="">      
-      <img src="http://www.wscha.org/wp-content/uploads/2015/03/repairs-n-maintenance2.jpg" alt="">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNkmgB_MV_CMyXNgT8MdS85TdDuzyd1BtuEHe9mZSMLgF2Ye9F" alt="">
-      <img src="https://com-safe.org/wp-content/uploads/2019/01/supprt-tech-1.jpg" alt="">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeYOTCXax-ZnKFewcndUbZCj6g9XxQ7VVA9RgKhqGgcfajOTOvOQ" alt="">
     </div>
-    
+    <div class="col-6">
+      <h3>Contact Us</h3>
+      <div id="container2">
+        <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="email">Your Email</label>
+          <input type="text" id="email" name="Email" placeholder="Your email..">
+
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">India</option>
+            <option value="usa">Mexico</option>
+            <option value="usa">Turkey</option>
+            <option value="usa">USA</option>
+          </select>
+
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="container3">
+    <h4 id="about">About</h4>
+    <p>This page has been created by three developer candidate. Our purpose to create this website is to help people to
+      fix their own items/devices. You can ask and look for help or help others by uploading your videos or
+      articles-guides to this website. You will need just to send us an email and ask us to upload it for you. We want
+      this website to be a social one which people can go and search about whatever they would like to know. Any kind of
+      unappropriate videos will not be uploaded and will be ignored. </p>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-facebook"></i>
+    <i class="fab fa-instagram"></i>
+
+  </div>
 
 
   <div class="footer">© copyright project1.com</div>
-  
- 
-<script>
+
+
+  <script>
     function myFunction() {
-      var x = document.getElementById("mynavbar");
-      if (x.className === "navbar") {
+      var x = document.getElementsById("navbar");
+      if (x.className === "myNavbar") {
         x.className += " responsive";
       } else {
-        x.className = "navbar";
+        x.className = "myNavbar";
       }
     }
-    </script>
-<script src="./assets/javaScript/app.js"></script>
+  </script>
+  <script src="./assets/javaScript/app.js"></script>
 </body>
+
 </html>
