@@ -1,60 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
+  <title>Document</title>
 
-    <div class="jumbotron">
-        <h1>Project1</h1> 
-        <p>Fix your onw devices...</p> 
+  <div class="jumbotron">
+    <h1>Project1</h1>
+    <p>Fix your onw devices...</p>
+  </div>
+
+  <div id="navbar">
+    <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
+    <a href="#news"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="#about"><i class="far fa-address-card"></i> About</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-tools"></i></button>
+      <div class="dropdown-content">
+        <a href="youtube.html">Youtube Videos</a>
+        <a href="guides.html">Articles&Guides</a>
+        <a href="tools.html">Tools&Needs</a>
+        <a href="specialist.html">Specialists</a>
       </div>
-      
-      <div id="navbar">
-          <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
-          <a href="#news"><i class="fas fa-question-circle"></i> FAQ</a>
-          <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-          <a href="#about"><i class="far fa-address-card"></i> About</a>
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
-          <div class="dropdown">
-            <button class="dropbtn"><i class="fas fa-tools"></i></button>
-            <div class="dropdown-content">
-              <a href="youtube.html">Youtube Videos</a>
-              <a href="guides.html">Articles&Guides</a>
-              <a href="tools.html">Tools&Needs</a>
-              <a href="specialist.html">Specialists</a>
-            </div>
-          </div>
-        </div>
+    </div>
+  </div>
 
 
 
-        <div class="footer">© copyright project1.com</div>
-  
- 
-        <script>
-            function myFunction() {
-              var x = document.getElementById("myTopnav");
-              if (x.className === "topnav") {
-                x.className += " responsive";
-              } else {
-                x.className = "topnav";
-              }
-            }
-            </script>
-         <script src="./assets/javaScript/app.js"></script>
-        </body>
-        </html>
+  <div class="footer">© copyright project1.com</div>
+
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+  <script src="./assets/javaScript/app.js"></script>
+  </body>
+
+</html>
