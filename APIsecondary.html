@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Test Page</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+
+<!---
+  API key for Google CSE: AIzaSyCpADDg5PawhJUvX3Iz89DhgNjn8Q8lliE
+
+  "CX" or Search Engine ID: 011713005839883465002:--x2lc8fjam
+-->
+
+
+
+
+<body>
+  <h1>This is a test page for the remaining APIs.</h1>
+
+  <form id="queries">
+      <label for="query-input">Search for a DIY article!</label>
+      <input type="text" id="query-input">
+      <input id="add-query" type="submit" value="Search">
+  </form>
+
+  <p id="search-result-url1"></p>
+  <p id="search-result-url2"></p>
+  <p id="search-result-url3"></p>
+  <p id="search-result-url4"></p>
+  <p id="search-result-url5"></p>
+
+
+
+  <script type="text/javascript">
+
+    $("#add-query").on("click", function(event) {
+      event.preventDefault();
+
+      var keyword = $("#query-input").val().trim();
+          
+    var queryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpADDg5PawhJUvX3Iz89DhgNjn8Q8lliE&cx=011713005839883465002:--x2lc8fjam&q=" + keyword;
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+
+        console.log(response);
+
+        console.log(response.items[0].formattedUrl);
+        console.log(response.items[1].formattedUrl);
+        console.log(response.items[2].formattedUrl);
+        console.log(response.items[3].formattedUrl);
+        console.log(response.items[4].formattedUrl);
+
+    })
+    })
+
+
+  
+  </script>
+
+
+
+  
+</body>
+</html>
