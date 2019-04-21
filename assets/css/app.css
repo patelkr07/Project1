@@ -4,16 +4,16 @@
 
   }
   .jumbotron{
-    background-color: darkgreen;
+    background-image:linear-gradient(#0d169b 0%, #0f4583 26%, rgb(21, 119, 143) 50%, #52b9bd 54%, #66d1bf 58%, #a8dddd 90%, #f7e8e8 100%);
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: blue;
+    color:whitesmoke;
   }
  /* Navbar css strat here */
 #navbar {
   overflow: hidden;
-  background-color: azure;
+  background-color: rgb(66, 62, 62);
   margin-top: -25px;
   padding-left: 10px;
   border-bottom: 1px solid black;
@@ -104,7 +104,8 @@ background-color: azure;
 }
 /* youtube samples css starts here */
 h2{
-  color: red;
+  color: rgb(22, 18, 18);
+  font-size: 20px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: bold;
   text-align: center;
@@ -212,7 +213,9 @@ h4{
    .youtubebody{
      background-color: darkgrey;
   }
+  
 
+  
   
   @media only screen and (max-width:600px) {
     /* For mobile phones: */
@@ -242,3 +245,5 @@ h4{
       text-align: left;
     }
   }
+
+ 

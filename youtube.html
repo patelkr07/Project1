@@ -46,6 +46,30 @@
   </div>
 
 
+  <h3 id="videoSearch">Video Resources</h3>
+  <form id="videos">
+      <label for="video-input">Search for a video!</label>
+      <input type="text" id="video-input">
+      <input id="add-video" type="submit" value="Search">
+  </form>
+  <br>
+  <br>
+  <br>
+
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6"> <iframe width="560" height="315" src id = "videolink2" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="col-md-6"><iframe width="560" height="315" src id = "videolink1" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="col-md-6"><iframe width="560" height="315" src id = "videolink3" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="col-md-6"> <iframe width="560" height="315" src id = "videolink4" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="col-md-offset-3 col-md-6"><iframe width="560" height="315" src id = "videolink5" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+</div>
+
+  <div id="showPic"></div>
+
+
+
   <div class="footer">© copyright project1.com</div>
 
 
@@ -59,7 +83,85 @@
       }
     }
   </script>
-  <script src="./assets/javaScript/app.js"></script>
+
+<script type="text/javascript">
+    
+  $("#add-video").on("click", function(event) {
+      event.preventDefault();
+
+      var keyword = $("#video-input").val().trim();
+
+  var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + keyword + "&key=AIzaSyAgkup2SVnY6rHhvTA1q8l54cgKpAu5Zyk";
+
+  
+
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+  }).then(function(response) {
+
+
+      var title1 = response.items[0].snippet.title;
+
+      var title2 = response.items[1].snippet.title;
+
+      var title3 = response.items[2].snippet.title;
+
+      var title4 = response.items[3].snippet.title;
+      
+      var title5 = response.items[4].snippet.title;
+
+      var ytVideoId1 = response.items[0].id.videoId;
+
+      var ytVideoId2 = response.items[1].id.videoId;
+
+      var ytVideoId3 = response.items[2].id.videoId;
+      
+      var ytVideoId4 = response.items[3].id.videoId;
+
+      var ytVideoId5 = response.items[4].id.videoId;
+
+      var videoURL1 = "https://www.youtube.com/embed/" + ytVideoId1;
+
+      var videoURL2 = "https://www.youtube.com/embed/" + ytVideoId2;
+      
+      var videoURL3 = "https://www.youtube.com/embed/" + ytVideoId3;
+
+      var videoURL4 = "https://www.youtube.com/embed/" + ytVideoId4;
+
+      var videoURL5 = "https://www.youtube.com/embed/" + ytVideoId5;
+
+
+      console.log(videoURL1);
+      
+      console.log(videoURL2);
+
+      console.log(videoURL3);
+
+      console.log(videoURL4);
+
+      console.log(videoURL5);
+
+      console.log(response.items[0].id);
+
+      //$("#video-link").text("")
+
+      $("#videolink1").attr("src", videoURL1);
+
+      $("#videolink2").attr("src", videoURL2);
+
+      $("#videolink3").attr("src", videoURL3);
+
+      $("#videolink4").attr("src", videoURL4);
+
+      $("#videolink5").attr("src", videoURL5);
+
+
+  })
+  })
+</script>
+
+<script src="./assets/javaScript/app.js"></script>
 </body>
 
 </html>

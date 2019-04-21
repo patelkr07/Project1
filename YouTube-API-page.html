@@ -19,31 +19,7 @@
     <br>
     <br>
     <br>
-    <!----<h3 id="video-title"></h3>
-    <br>
-    <img id="my-image1"></img>
-    <br>
-    <img id="my-image2"></img>
-    <br>
-    <img id="my-image3"></img>
-    <br>
-    <img id="my-image4"></img>
-    <br>
-    <img id="my-image5"></img>
-
-    <img id="thumb-image1"></img>
-    <br>
-    <img id="thumb-image2"></img>
-    <br>
-    <img id="thumb-image3"></img>
-    <br>
-    <img id="thumb-image4"></img>
-    <br>
-    <img id="thumb-image5"></img>
-
-    <div id="video1-link"></div>
-
-    --<iframe width="560" height="315" src="https://www.youtube.com/embed/bEjGuDcDJjU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+  
 
     <iframe width="560" height="315" src id = "videolink1" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -83,16 +59,6 @@
         var title4 = response.items[3].snippet.title;
         
         var title5 = response.items[4].snippet.title;
-
-        var thumbUrl1 = response.items[0].snippet.thumbnails.default.url;
-
-        var thumbUrl2 = response.items[1].snippet.thumbnails.default.url;
-
-        var thumbUrl3 = response.items[2].snippet.thumbnails.default.url;
-
-        var thumbUrl4 = response.items[3].snippet.thumbnails.default.url;
-
-        var thumbUrl5 = response.items[4].snippet.thumbnails.default.url;
 
         var ytVideoId1 = response.items[0].id.videoId;
 
@@ -139,34 +105,6 @@
 
         $("#videolink5").attr("src", videoURL5);
 
-        
-
-        
-
-        //var videoURL = response.items[0].snippet.
-
-        //var videoURL = response.items[1]
-
-       // var videoURL = response.items[2]
-
-        //var videoURL = response.items[3]
-
-        //var videoURL = response.items[4]
-    
-
-
-
-        var thumbImage1 = $("#my-image1").attr("src", thumbUrl1);
-
-        var thumbImage2 = $("#my-image2").attr("src", thumbUrl2);
-
-        var thumbImage3 = $("#my-image3").attr("src", thumbUrl3);
-
-        var thumbImage4 = $("#my-image4").attr("src", thumbUrl4);
-
-        var thumbImage5 = $("#my-image5").attr("src", thumbUrl5);
-
-        console.log(response)
 
     })
     })
