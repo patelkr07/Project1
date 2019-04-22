@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>DIY Articles</title>
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+
+<!---
+    API key for Google CSE: AIzaSyCpADDg5PawhJUvX3Iz89DhgNjn8Q8lliE
+    
+    "CX" or Search Engine ID: 011713005839883465002:--x2lc8fjam
+-->
+
+</head>
+
+<body>
+
+    <!--This is the searchbox for the DIY articles, will eventually be linked to home-->
+    <form id="queries">
+        <label for="query-input">Search for a DIY article!</label>
+        <input type="text" id="query-input">
+        <input id="add-query" type="submit" value="Search">
+    </form>
+
+    <!--This holds the article source/webpage title and below it is the text container (x5)-->
+    <h2 id="article-title-1">DIY Article 1</h2>
+    <h2 id="article-source-1"></h2>
+    <h3 id="article-text-1"></h3>
+
+    <h2 id="article-title-2">DIY Article 2</h2>
+    <h2 id="article-source-2"></h2>
+    <h3 id="article-text-2"></h3>
+
+    <h2 id="article-title-3">DIY Article 3</h2>
+    <h2 id="article-source-3"></h2>
+    <h3 id="article-text-3"></h3>
+
+    <h2 id="article-title-4">DIY Article 4</h2>
+    <h2 id="article-source-4"></h2>
+    <h3 id="article-text-4"></h3>
+
+    <h2 id="article-title-5">DIY Article 5</h2>
+    <h2 id="article-source-5"></h2>
+    <h3 id="article-text-5"></h3>
+
+    <script type="text/javascript">
+
+        //This is the click event and AJAX call for the search query API, which will then be entered into the article API
+
+        $("#add-query").on("click", function(event) {
+            event.preventDefault();
+
+            var keyword = $("#query-input").val().trim();
+
+            var searchQueryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpADDg5PawhJUvX3Iz89DhgNjn8Q8lliE&cx=011713005839883465002:--x2lc8fjam&q=" + keyword;
+
+            $.ajax({
+                url: searchQueryURL,
+                method: "GET"
+            }).then(function(response) {
+
+                console.log(response);
+
+                //these are the top 5 search results for the DIY article search
+
+                var result1 = response.items[0].formattedUrl;
+                var result2 = response.items[1].formattedUrl;
+                var result3 = response.items[2].formattedUrl;
+                var result4 = response.items[3].formattedUrl;
+                var result5 = response.items[4].formattedUrl;
+
+                console.log(result1);
+                console.log(result2);
+                console.log(result3);
+                console.log(result4);
+                console.log(result5);
+            
+            
+
+        //This is the AJAX call which will return a DIY article (#1)
+
+        var articleQueryURL1 = "https://api.diffbot.com/v3/article?token=16c2594fbc85d3697e488c099966b38a&url=" + result1;
+
+        $.ajax({
+            url: articleQueryURL1,
+            method: "GET"
+        }).then(function(response) {
+
+            var title1 = response.objects[0].title;
+
+            var articletext1 = response.objects[0].text;
+
+            console.log(response);
+
+            console.log(title1);
+
+            console.log(articletext1);
+
+            $("#article-source-1").text(title1);
+
+            $("#article-text-1").text(articletext1);
+
+        //This is the second AJAX call
+
+        var articleQueryURL2 = "https://api.diffbot.com/v3/article?token=16c2594fbc85d3697e488c099966b38a&url=" + result2;
+
+        $.ajax({
+            url: articleQueryURL2,
+            method: "GET"
+        }).then(function(response) {
+
+            var title2 = response.objects[0].title;
+
+            var articletext2 = response.objects[0].text;
+
+            console.log(response);
+
+            console.log(title2);
+
+            console.log(articletext2);
+
+            $("#article-source-2").text(title2);
+
+            $("#article-text-2").text(articletext2);
+
+        //This is the third AJAX call
+
+        var articleQueryURL3 = "https://api.diffbot.com/v3/article?token=16c2594fbc85d3697e488c099966b38a&url=" + result3;
+
+        $.ajax({
+            url: articleQueryURL3,
+            method: "GET"
+        }).then(function(response) {
+
+            var title3 = response.objects[0].title;
+
+            var articletext3 = response.objects[0].text;
+
+            console.log(response);
+
+            console.log(title3);
+
+            console.log(articletext3);
+
+            $("#article-title-3").text(title3);
+
+            $("#article-text-3").text(articletext3);
+
+        //This is the fourth AJAX call
+
+        var articleQueryURL4 = "https://api.diffbot.com/v3/article?token=16c2594fbc85d3697e488c099966b38a&url=" + result4;
+
+        $.ajax({
+            url: articleQueryURL4,
+            method: "GET"
+        }).then(function(response) {
+
+            var title4 = response.objects[0].title;
+
+            var articletext4 = response.objects[0].text;
+
+            console.log(response);
+
+            console.log(title4);
+
+            console.log(articletext4);
+
+            $("#article-title-4").text(title4);
+
+            $("#article-text-4").text(articletext4);
+
+        //This is the fifth AJAX call
+
+        var articleQueryURL5 = "https://api.diffbot.com/v3/article?token=16c2594fbc85d3697e488c099966b38a&url=" + result5;
+
+        $.ajax({
+            url: articleQueryURL5,
+            method: "GET"
+        }).then(function(response) {
+
+            var title5 = response.objects[0].title;
+
+            var articletext5 = response.objects[0].text;
+
+            console.log(response);
+
+            console.log(title5);
+
+            console.log(articletext5);
+
+            $("#article-title-5").text(title5);
+
+            $("#article-text-5").text(articletext5);
+
+            })
+
+        })
+
+    })
+        
+        
+        })
+
+        
+        })
+    })
+})
+
+        
+    </script>
+
+
+
+
+    
+</body>
+</html>
