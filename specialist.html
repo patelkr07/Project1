@@ -18,16 +18,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
   <title>Document</title>
+</head>
 
-  <div class="jumbotron">
-    <h1>Project1</h1>
-    <p>Fix your onw devices...</p>
+<body class="indexbody">
+  <div class="jumbotron" id="jumbotronindex">
+    <h1 id="projectName">I Can Fix</h1>
+    <p>Fix your items/devices yourself...</p>
   </div>
 
-  <div id="navbar">
+
+  <div id="navbar" class="myNavbar">
     <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="#news"><i class="fas fa-question-circle"></i> FAQ</a>
-    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="#faq"><i class="far fa-question-circle"></i> FAQ</a>
+    <a href="#container2"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     <a href="#about"><i class="far fa-address-card"></i> About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -42,23 +45,272 @@
       </div>
     </div>
   </div>
-
-
-
-  <div class="footer">© copyright project1.com</div>
-
-
-  <script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
+  <style>
+    #map {
+      height: 50%;
+      margin: 50px;
     }
-  </script>
-  <script src="./assets/javaScript/app.js"></script>
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #description {
+      font-family: Roboto;
+      font-size: 15px;
+      font-weight: 300;
+    }
+
+    #infowindow-content .title {
+      font-weight: bold;
+    }
+
+    #infowindow-content {
+      display: none;
+    }
+
+    #map #infowindow-content {
+      display: inline;
+    }
+
+    .pac-card {
+      margin: 10px 10px 0 0;
+      border-radius: 2px 0 0 2px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      font-family: Roboto;
+    }
+
+    #pac-container {
+      padding-bottom: 12px;
+      margin-right: 12px;
+    }
+
+    .pac-controls {
+      display: inline-block;
+      padding: 5px 11px;
+    }
+
+    .pac-controls label {
+      font-family: Roboto;
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    #pac-input {
+      background-color: #fff;
+      font-family: Roboto;
+      font-size: 15px;
+      font-weight: 300;
+      margin-left: 12px;
+      padding: 0 11px 0 13px;
+      text-overflow: ellipsis;
+      width: 400px;
+    }
+
+    #pac-input:focus {
+      border-color: #4d90fe;
+    }
+
+    #title {
+      color: #fff;
+      background-color: #4d90fe;
+      font-size: 25px;
+      font-weight: 500;
+      padding: 6px 12px;
+    }
+
+    #target {
+      width: 345px;
+    }
+  </style>
+
+
+  <body>
+    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+    <script>
+      // This example adds a search box to a map, using the Google Place Autocomplete
+      // feature. People can enter geographical searches. The search box will return a
+      // pick list containing a mix of places and predicted search terms.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: { lat: -33.8688, lng: 151.2195 },
+          zoom: 13,
+          mapTypeId: 'roadmap'
+        });
+
+        // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+        // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function () {
+          searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function () {
+          var places = searchBox.getPlaces();
+
+          if (places.length == 0) {
+            return;
+          }
+
+          // Clear out the old markers.
+          markers.forEach(function (marker) {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // For each place, get the icon, name and location.
+          var bounds = new google.maps.LatLngBounds();
+          places.forEach(function (place) {
+            if (!place.geometry) {
+              console.log("Returned place contains no geometry");
+              return;
+            }
+            var icon = {
+              url: place.icon,
+              size: new google.maps.Size(71, 71),
+              origin: new google.maps.Point(0, 0),
+              anchor: new google.maps.Point(17, 34),
+              scaledSize: new google.maps.Size(25, 25)
+            };
+
+            // Create a marker for each place.
+            markers.push(new google.maps.Marker({
+              map: map,
+              icon: icon,
+              title: place.name,
+              position: place.geometry.location
+            }));
+
+            if (place.geometry.viewport) {
+              // Only geocodes have viewport.
+              bounds.union(place.geometry.viewport);
+            } else {
+              bounds.extend(place.geometry.location);
+            }
+          });
+          map.fitBounds(bounds);
+        })
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl9SvU6RfzqtZdIf6qskKKCP3HyLU-kn4
+  &libraries=places&callback=initAutocomplete" async defer></script>
+    </div>
+    <div class="row">
+      <div class="col-6">
+
+        <div id="faq">
+          <h2>FAQ</h2>
+          <ul id="newQ">
+            <span id="ask-answer"><b>Ask or Answer: </b><input id="ask" type="text"><input id="question" value="Submit"
+                type="submit"></span>
+            <div id="to-ask"></div>
+          </ul>
+          <ul>
+            <li><b>Question:</b> How do we add our videos to this website?</li>
+            <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+          </ul>
+          <ul>
+            <li><b>Question:</b> How do we add our videos to this website?</li>
+            <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+          </ul>
+          <ul>
+            <li><b>Question:</b> How do we add our videos to this website?</li>
+            <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+          </ul>
+          <ul>
+            <li><b>Question:</b> How do we add our videos to this website?</li>
+            <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="col-6">
+        <h3>Contact Us</h3>
+        <div id="container2">
+          <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+            <label for="email">Your Email</label>
+            <input type="text" id="email" name="Email" placeholder="Your email..">
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">India</option>
+              <option value="usa">Mexico</option>
+              <option value="usa">Turkey</option>
+              <option value="usa">USA</option>
+            </select>
+
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px"></textarea>
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <div class="container3">
+      <h4 id="about">About</h4>
+      <p>This page has been created by three developer candidate. Our purpose to create this website is to help people
+        to
+        fix their own items/devices. You can ask and look for help or help others by uploading your videos or
+        articles-guides to this website. You will need just to send us an email and ask us to upload it for you. We want
+        this website to be a social one which people can go and search about whatever they would like to know. Any kind
+        of
+        unappropriate videos will not be uploaded and will be ignored. </p>
+      <div class="socialIcons">
+        <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+      </div>
+
+
+    </div>
+
+
+
+    <div class="footer">© copyright project1.com</div>
+
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("navbar");
+        if (x.className === "myNavbar") {
+          x.className += " responsive";
+        } else {
+          x.className = "myNavbar";
+        }
+      }
+    </script>
+    <script src="./assets/javaScript/app.js"></script>
   </body>
 
 </html>

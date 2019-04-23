@@ -18,16 +18,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
   <title>Document</title>
+</head>
 
-  <div class="jumbotron">
-    <h1>Project1</h1>
-    <p>Fix your onw devices...</p>
+<body class="indexbody">
+  <div class="jumbotron" id="jumbotronindex">
+    <h1 id="projectName">I Can Fix</h1>
+    <p>Fix your items/devices yourself...</p>
   </div>
 
-  <div id="navbar">
+
+  <div id="navbar" class="myNavbar">
     <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="#news"><i class="fas fa-question-circle"></i> FAQ</a>
-    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="#faq"><i class="far fa-question-circle"></i> FAQ</a>
+    <a href="#container2"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     <a href="#about"><i class="far fa-address-card"></i> About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -44,21 +47,177 @@
   </div>
 
 
+  <h2>
+    <form id="diyarticles">
+      <label for="article-input">DIY article search</label>
+      <input type="text" id="article-input">
+      <input id="add-article" type="submit" value="Search">
+    </form>
+  </h2>
+
+  <br>
+  <br>
+  <br>
+
+  <h2>Article Title</h2>
+  <h3 id="article-title"></h3>
+  <br>
+  <h2>Article Text</h2>
+  <h3 id="article-text"></h3>
+  <br>
+
+  <script type="text/javascript">
+
+    //put click button here
+
+    var website = "https://www.pelicanparts.com/techarticles/BMW_F30/01-BASICS-Engine_Air_Filter_Replacement/01-BASICS-Engine_Air_Filter_Replacement.htm"
+
+    var queryURL = "https://api.diffbot.com/v3/article?token=16c2594fbc85d3697e488c099966b38a&url=" + website;
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+
+      var title = response.objects[0].title;
+
+      var articletext = response.objects[0].text;
+
+
+
+      console.log(response);
+
+      console.log(response.objects[0].title)
+
+      console.log(title);
+
+      console.log(articletext);
+
+      $("#article-title").text(title);
+
+      $("#article-text").text(articletext);
+
+
+
+    });
+
+
+
+
+
+
+
+
+
+  </script>
+
+  <script>
+    (function () {
+      var cx = '009408066924091716834:8_n6-9vruha';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+  <gcse:search></gcse:search>
+  </div>
+  <div class="row">
+    <div class="col-6">
+
+      <div id="faq">
+        <h2>FAQ</h2>
+        <ul id="newQ">
+          <span id="ask-answer"><b>Ask or Answer: </b><input id="ask" type="text"><input id="question" value="Submit"
+              type="submit"></span>
+          <div id="to-ask"></div>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="col-6">
+      <h3>Contact Us</h3>
+      <div id="container2">
+        <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="email">Your Email</label>
+          <input type="text" id="email" name="Email" placeholder="Your email..">
+
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">India</option>
+            <option value="usa">Mexico</option>
+            <option value="usa">Turkey</option>
+            <option value="usa">USA</option>
+          </select>
+
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container3">
+    <h4 id="about">About</h4>
+    <p>This page has been created by three developer candidate. Our purpose to create this website is to help people to
+      fix their own items/devices. You can ask and look for help or help others by uploading your videos or
+      articles-guides to this website. You will need just to send us an email and ask us to upload it for you. We want
+      this website to be a social one which people can go and search about whatever they would like to know. Any kind of
+      unappropriate videos will not be uploaded and will be ignored. </p>
+    <div class="socialIcons">
+      <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+
+
+  </div>
+
 
   <div class="footer">© copyright project1.com</div>
 
 
+
   <script>
     function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
+      var x = document.getElementById("navbar");
+      if (x.className === "myNavbar") {
         x.className += " responsive";
       } else {
-        x.className = "topnav";
+        x.className = "myNavbar";
       }
     }
   </script>
   <script src="./assets/javaScript/app.js"></script>
-  </body>
+</body>
 
 </html>

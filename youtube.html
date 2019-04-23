@@ -18,18 +18,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
   <title>Document</title>
+</head>
 
-<body class="youtubebody">
-  <div class="jumbotron" id="jumbotronyoutube">
-    <h1>Project1</h1>
-    <p>Fix your onw devices...</p>
-
+<body class="indexbody">
+  <div class="jumbotron" id="jumbotronindex">
+    <h1 id="projectName">I Can Fix</h1>
+    <p>Fix your items/devices yourself...</p>
   </div>
 
-  <div id="navbar">
+  <div id="navbar" class="myNavbar">
     <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="#news"><i class="fas fa-question-circle"></i> FAQ</a>
-    <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+    <a href="#faq"><i class="far fa-question-circle"></i> FAQ</a>
+    <a href="#container2"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     <a href="#about"><i class="far fa-address-card"></i> About</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>
@@ -45,12 +45,31 @@
     </div>
   </div>
 
+  <h1 id="videoSearch">Video Resources</h1>
+  <form id="videos">
+    <input type="text" id="video-input" placeholder="Search for a video..">
+    <input id="add-video" type="submit">
+  </form>
+  <br>
+  <br>
+  <br>
+  <!-- <!----<h3 id="video-title"></h3> -->
+  <br>
+  <img id="my-image1"></img>
+  <br>
+  <img id="my-image2"></img>
+  <br>
+  <img id="my-image3"></img>
+  <br>
+  <img id="my-image4"></img>
+  <br>
+  <img id="my-image5"></img>
 
   <h3 id="videoSearch">Video Resources</h3>
   <form id="videos">
-      <label for="video-input">Search for a video!</label>
-      <input type="text" id="video-input">
-      <input id="add-video" type="submit" value="Search">
+    <label for="video-input">Search for a video!</label>
+    <input type="text" id="video-input">
+    <input id="add-video" type="submit" value="Search">
   </form>
   <br>
   <br>
@@ -58,13 +77,23 @@
 
   <div class="container">
     <div class="row">
-        <div class="col-md-6"> <iframe width="560" height="315" src id = "videolink2" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="col-md-6"><iframe width="560" height="315" src id = "videolink1" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="col-md-6"><iframe width="560" height="315" src id = "videolink3" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="col-md-6"> <iframe width="560" height="315" src id = "videolink4" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="col-md-offset-3 col-md-6"><iframe width="560" height="315" src id = "videolink5" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="col-md-6"> <iframe width="560" height="315" src id="videolink2" src="" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-6"><iframe width="560" height="315" src id="videolink1" src="" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-6"><iframe width="560" height="315" src id="videolink3" src="" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-6"> <iframe width="560" height="315" src id="videolink4" src="" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="col-md-offset-3 col-md-6"><iframe width="560" height="315" src id="videolink5" src="" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
-</div>
+  </div>
 
   <div id="showPic"></div>
 
@@ -72,96 +101,221 @@
 
   <div class="footer">© copyright project1.com</div>
 
+  //$("#video-link").text("")
+
+  $("#videolink1").attr("src", videoURL1);
+
+  $("#videolink2").attr("src", videoURL2);
+
+  $("#videolink3").attr("src", videoURL3);
+
+  $("#videolink4").attr("src", videoURL4);
+
+  $("#videolink5").attr("src", videoURL5);
+
+
+
+
+  //var videoURL = response.items[0].snippet.
+
+  //var videoURL = response.items[1]
+
+  // var videoURL = response.items[2]
+
+  //var videoURL = response.items[3]
+
+  //var videoURL = response.items[4]
+
+
+
+
+  var thumbImage1 = $("#my-image1").attr("src", thumbUrl1);
+
+  var thumbImage2 = $("#my-image2").attr("src", thumbUrl2);
+
+  var thumbImage3 = $("#my-image3").attr("src", thumbUrl3);
+
+  var thumbImage4 = $("#my-image4").attr("src", thumbUrl4);
+
+  var thumbImage5 = $("#my-image5").attr("src", thumbUrl5);
+
+  console.log(response)
+
+  })
+  })
+
+
+  </script>
+  </div>
+  <div class="row">
+    <div class="col-6">
+
+      <div id="faq">
+        <h2>FAQ</h2>
+        <ul id="newQ">
+          <span id="ask-answer"><b>Ask or Answer: </b><input id="ask" type="text"><input id="question" value="Submit"
+              type="submit"></span>
+          <div id="to-ask"></div>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+        </ul>
+        <ul>
+          <li><b>Question:</b> How do we add our videos to this website?</li>
+          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="col-6">
+      <h3>Contact Us</h3>
+      <div id="container2">
+        <form action="mailto:someone@example.com" method="post" enctype="text/plain">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="email">Your Email</label>
+          <input type="text" id="email" name="Email" placeholder="Your email..">
+
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">India</option>
+            <option value="usa">Mexico</option>
+            <option value="usa">Turkey</option>
+            <option value="usa">USA</option>
+          </select>
+
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="container3">
+    <h4 id="about">About</h4>
+    <p>This page has been created by three developer candidate. Our purpose to create this website is to help people to
+      fix their own items/devices. You can ask and look for help or help others by uploading your videos or
+      articles-guides to this website. You will need just to send us an email and ask us to upload it for you. We want
+      this website to be a social one which people can go and search about whatever they would like to know. Any kind of
+      unappropriate videos will not be uploaded and will be ignored. </p>
+    <div class="socialIcons">
+      <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+    </div>
+
+
+  </div>
+
+
+  <div class="footer">© copyright project1.com</div>
 
   <script>
     function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
+      var x = document.getElementById("navbar");
+      if (x.className === "myNavbar") {
         x.className += " responsive";
       } else {
-        x.className = "topnav";
+        x.className = "myNavbar";
       }
     }
   </script>
 
-<script type="text/javascript">
-    
-  $("#add-video").on("click", function(event) {
+  <script type="text/javascript">
+
+    $("#add-video").on("click", function (event) {
       event.preventDefault();
 
       var keyword = $("#video-input").val().trim();
 
-  var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + keyword + "&key=AIzaSyAgkup2SVnY6rHhvTA1q8l54cgKpAu5Zyk";
-
-  
-
-  $.ajax({
-      url: queryURL,
-      method: "GET"
-  }).then(function(response) {
+      var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + keyword + "&key=AIzaSyAgkup2SVnY6rHhvTA1q8l54cgKpAu5Zyk";
 
 
-      var title1 = response.items[0].snippet.title;
 
-      var title2 = response.items[1].snippet.title;
-
-      var title3 = response.items[2].snippet.title;
-
-      var title4 = response.items[3].snippet.title;
-      
-      var title5 = response.items[4].snippet.title;
-
-      var ytVideoId1 = response.items[0].id.videoId;
-
-      var ytVideoId2 = response.items[1].id.videoId;
-
-      var ytVideoId3 = response.items[2].id.videoId;
-      
-      var ytVideoId4 = response.items[3].id.videoId;
-
-      var ytVideoId5 = response.items[4].id.videoId;
-
-      var videoURL1 = "https://www.youtube.com/embed/" + ytVideoId1;
-
-      var videoURL2 = "https://www.youtube.com/embed/" + ytVideoId2;
-      
-      var videoURL3 = "https://www.youtube.com/embed/" + ytVideoId3;
-
-      var videoURL4 = "https://www.youtube.com/embed/" + ytVideoId4;
-
-      var videoURL5 = "https://www.youtube.com/embed/" + ytVideoId5;
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
 
 
-      console.log(videoURL1);
-      
-      console.log(videoURL2);
+        var title1 = response.items[0].snippet.title;
 
-      console.log(videoURL3);
+        var title2 = response.items[1].snippet.title;
 
-      console.log(videoURL4);
+        var title3 = response.items[2].snippet.title;
 
-      console.log(videoURL5);
+        var title4 = response.items[3].snippet.title;
 
-      console.log(response.items[0].id);
+        var title5 = response.items[4].snippet.title;
 
-      //$("#video-link").text("")
+        var ytVideoId1 = response.items[0].id.videoId;
 
-      $("#videolink1").attr("src", videoURL1);
+        var ytVideoId2 = response.items[1].id.videoId;
 
-      $("#videolink2").attr("src", videoURL2);
+        var ytVideoId3 = response.items[2].id.videoId;
 
-      $("#videolink3").attr("src", videoURL3);
+        var ytVideoId4 = response.items[3].id.videoId;
 
-      $("#videolink4").attr("src", videoURL4);
+        var ytVideoId5 = response.items[4].id.videoId;
 
-      $("#videolink5").attr("src", videoURL5);
+        var videoURL1 = "https://www.youtube.com/embed/" + ytVideoId1;
+
+        var videoURL2 = "https://www.youtube.com/embed/" + ytVideoId2;
+
+        var videoURL3 = "https://www.youtube.com/embed/" + ytVideoId3;
+
+        var videoURL4 = "https://www.youtube.com/embed/" + ytVideoId4;
+
+        var videoURL5 = "https://www.youtube.com/embed/" + ytVideoId5;
 
 
-  })
-  })
-</script>
+        console.log(videoURL1);
 
-<script src="./assets/javaScript/app.js"></script>
+        console.log(videoURL2);
+
+        console.log(videoURL3);
+
+        console.log(videoURL4);
+
+        console.log(videoURL5);
+
+        console.log(response.items[0].id);
+
+        //$("#video-link").text("")
+
+        $("#videolink1").attr("src", videoURL1);
+
+        $("#videolink2").attr("src", videoURL2);
+
+        $("#videolink3").attr("src", videoURL3);
+
+        $("#videolink4").attr("src", videoURL4);
+
+        $("#videolink5").attr("src", videoURL5);
+
+
+      })
+    })
+  </script>
+
+  <script src="./assets/javaScript/app.js"></script>
 </body>
 
 </html>
