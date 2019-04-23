@@ -57,79 +57,248 @@
     </h2>
   </div><br>
 
-  <div class="container">
-    <div class="row">
-      <div>
-        <img class="firstImages" src="https://www.tubefilter.com/wp-content/uploads/2018/12/youtube-logo.jpg" alt="">
-        <p class="p">With the help of Youtube and or other resources on this site you will be able to find videos for
-          any repairs
-          or help on any
-           DIY project all in the same place just use the search bar to help you find what you are looking for . </p>
-      </div>
-      <div>
-        <img class="firstImages" src="http://www.censorlab.tau.ac.il/wp-content/uploads/2018/07/research.png" alt="">
-        <p class="p">With the database in our Articles and Guides page you will be able to find many written resources to
-          help you with
-          repairs or step by step instructions guides
-          for any problem you have, just type what you need in the search bar  .</p>
-      </div>
-      
-      <div>
-        <img class="firstImages" src="http://www.wscha.org/wp-content/uploads/2015/03/repairs-n-maintenance2.jpg"
-          alt="">
-        <p class="p"> Sometimes evenn with guide,videos or even an instruction manual its difficult to fix or build
-          something from
-          scratch.This why we have a "Specialist
-          page so that when you need help in person, you can find freelance proffesional or shops close to your area.
-          All you have to do is enter your what you need help with
-          and you will see people and shops that can help you out within your area.
-        </p>
-      </div>
-    </div>
-  </div>
-  <br>
-  <h2>Learn How To Fix or Do By Watching Our <a href="youtube.html">Youtube Videos</a>...</h2>
-  <br>
-  <div class="row">
-    <div class="pics">
-      <video width="300" height="300" controls src="watch.mp4" type="video.mp4"></video>
-    </div>
-    <div class="pics">
-      <video width="300" height="300" controls src="Car Service Station.mp4" type="video.mp4"></video>
-    </div>
-    <div class="pics">
-      <video width="300" height="300" controls src="cool.mp4" type="video.mp4"></video>
-    </div>
-    <div class="pics">
-      <video width="300" height="300" controls src="cool1.mp4" type="video.mp4"></video>
-    </div>
-  </div>
-  <br>
-  <h2>Learn How To Fix By Reading Our Articles and Guides...</h2>
-  <div class="row" id="article">
-    <div class="pics">
-      <img class="secondImages" src="https://www.howtogeek.com/wp-content/uploads/2018/01/shutterstock_577454221.jpg"
-        alt="">
-      <p class="articleP"> <a href="guides.html">How do I fix my phone?</a></p>
-    </div>
-    <div class="pics">
-      <img class="secondImages"
-        src="https://citizenwatchserv.com/wp-content/uploads/2017/12/home-repair-battery-images.jpg" alt="">
-      <p class="articleP"> <a href="guides.html">Is it easy to fix my watch or clock?</a></p>
-    </div>
-    <div class="pics">
-      <img class="secondImages" src="http://www.psi-repair.com/images/services/Electronic/ElectronicRepair2.jpg" alt="">
-      <p class="articleP"> <a href="guides.html">Can I repair my computer?</a></p>
-    </div>
-    <div class="pics">
-      <img class="secondImages" src="https://www.wenatcheeautoservice.com/Images/banner-3.jpg" alt="">
-      <p class="articleP"> <a href="guides.html">Do you pay too much for your car repair?</a></p>
-    </div>
-    <button class="guideButton"><a href="guides.html">Click for more Articles!</a></button>
+   <!-- master input that all 3 API elements will use -->
+   <form id="master-form">
+    <input type="text" id="master-input" placeholder="What do you want to do?">
     <br>
+    <br>
+    <input id="add-master" type="submit">
+    <br>
+    <br>
+    <br>
+   </form>
+
+   <style>
+   #master-form {
+       margin: auto;
+       text-align: center;
+   }
+
+   #master-input {
+       margin: auto;
+       text-align: center;
+   }
+
+   #add-master {
+       margin: auto;
+       text-align: center;
+   }
+    </style>
+
+<!-- videos display container -->
+<div class="main">
+
+        <h2 id="video-title">DIY Videos</h2>
+
+        <iframe width="300" height="315" src id="videolink1" src="" frameborder="0"
+         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <iframe width="300" height="315" src id="videolink2" src="" frameborder="0"
+         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <iframe width="300" height="315" src id="videolink3" src="" frameborder="0"
+         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <iframe width="300" height="315" src id="videolink4" src="" frameborder="0"
+         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <iframe width="300" height="315" src id="videolink5" src="" frameborder="0"
+         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<style>
+    .video-container {
+        margin:auto;
+        text-align: center;
+        display:inline-block;
+    }
+
+</style>
+
+
+
+<!-- specialist display container -->
+<div class="specialist-container">
+
+    <h2 id="get-help">Get help from an expert</h2>
+
+    <h2 id="specialist-name"></h2>
+    <h2 id="specialist-address"></h2>
+
+
+</div>
+
+<style>
+.get-help {
+    font-weight:900;
+    font-size: 20;
+    
+}</style>
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!-- article display container -->
+<div class="article-container">
+
+    <h2><b>DIY article - do it yourself!<b></h2>
+
+    <h2 id="article-title"></h2>
+    <h2 id="article-text"></h2>
+
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- script/AJAX calls for videos -->
+<script type="text/javascript">
+
+    $("#add-master").on("click", function (event) {
+        event.preventDefault();
+
+        var keyword = $("#master-input").val().trim();
+
+        var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + keyword + "&key=AIzaSyAgkup2SVnY6rHhvTA1q8l54cgKpAu5Zyk";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+
+            console.log(response);
+
+
+            //creates valid YouTube links from array data
+
+            var videoURL1 = "https://www.youtube.com/embed/" + response.items[0].id.videoId;
+                console.log(videoURL1);
+
+            var videoURL2 = "https://www.youtube.com/embed/" + response.items[1].id.videoId;
+                console.log(videoURL2);
+
+            var videoURL3 = "https://www.youtube.com/embed/" + response.items[2].id.videoId;
+                console.log(videoURL3);
+            
+            var videoURL4 = "https://www.youtube.com/embed/" + response.items[3].id.videoId;
+                console.log(videoURL4);
+
+            var videoURL5 = "https://www.youtube.com/embed/" + response.items[4].id.videoId;
+                console.log(videoURL5);
+
+            //pushes videos to the video container 
+
+            $("#videolink1").attr("src", videoURL1);
+
+            $("#videolink2").attr("src", videoURL2);
+
+            $("#videolink3").attr("src", videoURL3);
+
+            $("#videolink4").attr("src", videoURL4);
+
+            $("#videolink5").attr("src", videoURL5);
+
+        })
+
+
+    })
+
+</script>
+
+<script type="text/javascript">
+
+    $("#add-master").on("click", function(event) {
+        event.preventDefault();
+
+        var categoryKeyword = $("#master-input").val().trim();
+
+        var specialistQueryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + categoryKeyword + "&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=" + "circle:2000@29.729742, -95.548542" + "&key=AIzaSyC7kNMNG8krZP57zlDDMVHoTSkJSqbc8nw";
+
+        $.ajax({
+            url: specialistQueryURL,
+            method: "GET"
+        }).then(function(response) {
+            
+            console.log(response);
+
+            console.log(response.candidates[0].name);
+
+            console.log(response.candidates[0].formatted_address);
+
+            var specialistName = response.candidates[0].name;
+
+            var specialistAddress = response.candidates[0].formatted_address;
+
+            $("#specialist-name").text(specialistName);
+
+            $("#specialist-address").text(specialistAddress);
+        })
+    })
+    
+</script>
+
+<script type="text/javascript">
+
+    $("#add-master").on("click", function(event) {
+        event.preventDefault();
+
+        var articleKeyword = $("#master-input").val().trim();
+
+        var searchQueryURL = "https://www.googleapis.com/customsearch/v1?key=AIzaSyCpADDg5PawhJUvX3Iz89DhgNjn8Q8lliE&cx=011713005839883465002:--x2lc8fjam&q= " + articleKeyword;
+
+        $.ajax({
+            url: searchQueryURL,
+            method: "GET"
+        }).then(function (response) {
+
+            console.log(response);
+
+            var result1 = response.items[0].link;
+                console.log(result1);
+
+            var result2 = response.items[1].link;
+                console.log(result2);
+
+        var articleQueryURL = "https://api.diffbot.com/v3/article?token=16c2594fbc85d3697e488c099966b38a&url=";
+
+        $.ajax({
+            url: articleQueryURL + result1,
+            method: "GET"
+        }).then(function (response) {
+
+            console.log(response);
+
+            var title1 = response.objects[0].title;
+                console.log(title1);
+
+            var articletext1 = response.objects[0].text;
+                console.log(articletext1);
+
+            $("#article-title").text(title1);
+
+            $("#article-text").text(articletext1);
+
+        })
+        
+        })
+    })
+
+</script>
   <div class="row">
     <div class="col-5">
 
