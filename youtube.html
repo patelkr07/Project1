@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./assets/css/app.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -16,15 +15,22 @@
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.12.0/validate.min.js"></script>
   <title>Document</title>
 </head>
 
 <body class="indexbody">
   <div class="jumbotron" id="jumbotronindex">
-    <h1 id="projectName">I Can Fix</h1>
-    <p>Fix your items/devices yourself...</p>
+    <h1> Handy Helper </h1>
+
+    <!-- <form>
+      <p><label for="subject"></label>
+        <textarea id="subject" name="subject" placeholder="search how to fix or build anything"
+          style="height:50px"></textarea>
+        <input type="submit" value="Submit">
+    </form> -->
+    </p>
   </div>
+
 
   <div id="navbar" class="myNavbar">
     <a href="index.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
@@ -37,14 +43,12 @@
     <div class="dropdown">
       <button class="dropbtn"><i class="fas fa-tools"></i></button>
       <div class="dropdown-content">
-        <a href="youtube.html">Youtube Videos</a>
+        <a href="youtube.html">Videos</a>
         <a href="guides.html">Articles&Guides</a>
-        <a href="tools.html">Tools&Needs</a>
         <a href="specialist.html">Specialists</a>
       </div>
     </div>
   </div>
-
   <h1 id="videoSearch">Video Resources</h1>
   <form id="videos">
     <input type="text" id="video-input" placeholder="Search for a video..">
@@ -53,7 +57,6 @@
   <br>
   <br>
   <br>
-  <!-- <!----<h3 id="video-title"></h3> -->
   <br>
   <img id="my-image1"></img>
   <br>
@@ -147,31 +150,34 @@
 
   </script>
   </div>
+  </div>
   <div class="row">
-    <div class="col-6">
+    <div class="col-5">
 
       <div id="faq">
         <h2>FAQ</h2>
-        <ul id="newQ">
-          <span id="ask-answer"><b>Ask or Answer: </b><input id="ask" type="text"><input id="question" value="Submit"
-              type="submit"></span>
-          <div id="to-ask"></div>
+        <ul>
+          <span id="ask-answer"><b>Ask your question: </b>
+            <input id="ask" type="text">
+            <button onclick='return addNew();' type="submit">Submit</button> </span>
+        </ul>
+        <ul id="addQuestion"></ul>
+        <p id="addAnswer"></p>
+        <ul>
+          <li>Question:How do we add our videos to this website?</li>
+          <p>Answer: You can send us an email by filling out the contact section..</p>
         </ul>
         <ul>
-          <li><b>Question:</b> How do we add our videos to this website?</li>
-          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+          <li>Question: How do we add our videos to this website?</li>
+          <p>Answer: You can send us an email by filling out the contact section..</p>
         </ul>
         <ul>
-          <li><b>Question:</b> How do we add our videos to this website?</li>
-          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+          <li>Question: How do we add our videos to this website?</li>
+          <p>Answer: You can send us an email by filling out the contact section..</p>
         </ul>
         <ul>
-          <li><b>Question:</b> How do we add our videos to this website?</li>
-          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
-        </ul>
-        <ul>
-          <li><b>Question:</b> How do we add our videos to this website?</li>
-          <p><b>Answer:</b> You can send us an email by filling out the contact section..</p>
+          <li>Question: How do we add our videos to this website?</li>
+          <p>Answer: You can send us an email by filling out the contact section..</p>
         </ul>
 
       </div>
@@ -207,13 +213,17 @@
       </div>
 
     </div>
+
+
   </div>
   <div class="container3">
     <h4 id="about">About</h4>
-    <p>This page has been created by three developer candidate. Our purpose to create this website is to help people to
-      fix their own items/devices. You can ask and look for help or help others by uploading your videos or
+    <p>This page has been created by three developers. Our purpose for creating this website is to help people
+      fix their own items/devices or assist them with there DIY projects. You can ask or help others by uploading your
+      videos or
       articles-guides to this website. You will need just to send us an email and ask us to upload it for you. We want
-      this website to be a social one which people can go and search about whatever they would like to know. Any kind of
+      this website to be a social one where people can go and search about any topic they would like to know. Any kind
+      of
       unappropriate videos will not be uploaded and will be ignored. </p>
     <div class="socialIcons">
       <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
@@ -227,6 +237,7 @@
 
   <div class="footer">© copyright project1.com</div>
 
+
   <script>
     function myFunction() {
       var x = document.getElementById("navbar");
@@ -237,6 +248,8 @@
       }
     }
   </script>
+
+
 
   <script type="text/javascript">
 
@@ -310,6 +323,7 @@
 
         $("#videolink5").attr("src", videoURL5);
 
+        $("#videolink1").attr("src", videoURL1);
 
       })
     })

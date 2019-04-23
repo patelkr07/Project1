@@ -10,6 +10,18 @@
     background-size: cover;
     color:whitesmoke;
   }
+  h1{
+    font-size: 65px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: lightgray;
+  }
+  .explanation{
+    margin-top: 60px;
+  }
+  .p{
+    font-size: 28px;
+  }
  /* Navbar css strat here */
 #navbar {
   overflow: hidden;
@@ -53,7 +65,7 @@
     padding: 14px;
     font-size: 16px;
     border: none;
-    background-color:azure;
+    background-color: rgb(66, 62, 62);
   }
   
   .dropdown {
@@ -66,7 +78,7 @@
   .dropdown-content {
     display: none;
     position: relative;
-    background-color: #f1f1f1;
+    background-color: rgb(66, 62, 62);
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
