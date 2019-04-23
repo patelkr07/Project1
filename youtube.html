@@ -21,14 +21,6 @@
 <body class="indexbody">
   <div class="jumbotron" id="jumbotronindex">
     <h1> Handy Helper </h1>
-
-    <!-- <form>
-      <p><label for="subject"></label>
-        <textarea id="subject" name="subject" placeholder="search how to fix or build anything"
-          style="height:50px"></textarea>
-        <input type="submit" value="Submit">
-    </form> -->
-    </p>
   </div>
 
 
@@ -54,45 +46,25 @@
     <input type="text" id="video-input" placeholder="Search for a video..">
     <input id="add-video" type="submit">
   </form>
-  <br>
-  <br>
-  <br>
-  <br>
-  <img id="my-image1"></img>
-  <br>
-  <img id="my-image2"></img>
-  <br>
-  <img id="my-image3"></img>
-  <br>
-  <img id="my-image4"></img>
-  <br>
-  <img id="my-image5"></img>
 
-  <h3 id="videoSearch">Video Resources</h3>
-  <form id="videos">
-    <label for="video-input">Search for a video!</label>
-    <input type="text" id="video-input">
-    <input id="add-video" type="submit" value="Search">
-  </form>
-  <br>
-  <br>
-  <br>
+
+
 
   <div class="container">
     <div class="row">
-      <div class="col-md-6"> <iframe width="560" height="315" src id="videolink2" src="" frameborder="0"
+      <div class="vid"> <iframe width="300" height="315" src id="videolink2" src="" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="col-md-6"><iframe width="560" height="315" src id="videolink1" src="" frameborder="0"
+      <div class="vid"><iframe width="300" height="315" src id="videolink1" src="" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="col-md-6"><iframe width="560" height="315" src id="videolink3" src="" frameborder="0"
+      <div class="vid"><iframe width="300" height="315" src id="videolink3" src="" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="col-md-6"> <iframe width="560" height="315" src id="videolink4" src="" frameborder="0"
+      <div class="vid"> <iframe width="300" height="315" src id="videolink4" src="" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="col-md-offset-3 col-md-6"><iframe width="560" height="315" src id="videolink5" src="" frameborder="0"
+      <div class="vid"><iframe width="300" height="315" src id="videolink5" src="" frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
@@ -100,52 +72,6 @@
 
   <div id="showPic"></div>
 
-
-
-  <div class="footer">© copyright project1.com</div>
-
-  //$("#video-link").text("")
-
-  $("#videolink1").attr("src", videoURL1);
-
-  $("#videolink2").attr("src", videoURL2);
-
-  $("#videolink3").attr("src", videoURL3);
-
-  $("#videolink4").attr("src", videoURL4);
-
-  $("#videolink5").attr("src", videoURL5);
-
-
-
-
-  //var videoURL = response.items[0].snippet.
-
-  //var videoURL = response.items[1]
-
-  // var videoURL = response.items[2]
-
-  //var videoURL = response.items[3]
-
-  //var videoURL = response.items[4]
-
-
-
-
-  var thumbImage1 = $("#my-image1").attr("src", thumbUrl1);
-
-  var thumbImage2 = $("#my-image2").attr("src", thumbUrl2);
-
-  var thumbImage3 = $("#my-image3").attr("src", thumbUrl3);
-
-  var thumbImage4 = $("#my-image4").attr("src", thumbUrl4);
-
-  var thumbImage5 = $("#my-image5").attr("src", thumbUrl5);
-
-  console.log(response)
-
-  })
-  })
 
 
   </script>
