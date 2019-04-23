@@ -1,7 +1,7 @@
 =======
 # Name of Project
 
-> [Live Site](Put the deployed link here once you have it)
+> https://patelkr07.github.io/Project1/index.html
 
 ## Project Summary
 
