@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     color:whitesmoke;
+    margin-bottom: 0;
   }
   h1{
     font-size: 65px;
@@ -18,6 +19,7 @@
   }
   .explanation{
     margin-top: 60px;
+    font-size: 18vidpx
   }
   .p{
     font-size: 28px;
@@ -139,7 +141,6 @@ h2{
 }
 /* youtube.html starts here */
 .vid{
-  border: 1px solid red;
   border-radius: 4px;
   margin: 5px;
 }
@@ -154,8 +155,7 @@ h2{
   padding-left: 15px;
 }
 #video-input{
-  width: 50%;
-  margin-left: 300px;
+
 }
 
 /* article samples start here */
@@ -277,7 +277,7 @@ h4{
   @media only screen and (max-width:600px) {
     /* For mobile phones: */
     .main, .ul#navbar, .container, .articleP, .row, #container2,
-    ul#navbar li, .dropdown-content{float: none;
+    ul#navbar li, .dropdown-content, .guideButton {float: none;
       width:100%;}
     
   }
