@@ -132,8 +132,67 @@
 
 
   <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
+
+      <h1 id="specialist-search-title">Find a Specialist Near You</h1>
+
+      <!-- Input form for nearby experts/specialist based on geo-location -->
+      <form id="specialists">
+  
+          <!-- This is set to Houston for now, need to convert zip to lat/long 
+          <label for="area-input">Zip Code</label>
+          <input type="text" id="area-input">
+          <br>
+          <br>
+          -->
+  
+          <label for="category-input">Category</label>
+          <input type="text" id="category-input">
+          <input id="add-area" type="submit" value="Search">
+      </form>
+      <h2 id="specialist-1-title"></h2>
+      <h2 id="specialist-name-1"></h2>  
+      <h2 id="specialist-address-1"></h2>
+  
+      <br>
+  
+      <h2 id="specialist-2-title"></h2>
+      <h2 id="specialist-name-2"></h2>
+      <h2 id="specialist-address-2"></h2>
+      
+      <script type="text/javascript">
+
+        $("#add-area").on("click", function(event) {
+            event.preventDefault();
+
+            //var areaKeyword = $("#area-input").val().trim();
+
+            var categoryKeyword = $("#category-input").val().trim();
+
+        var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + categoryKeyword + "&inputtype=textquery&fields=photos,formatted_address,name,opening_hours,rating&locationbias=" + "circle:2000@29.729742, -95.548542" + "&key=AIzaSyC7kNMNG8krZP57zlDDMVHoTSkJSqbc8nw";
+        
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function(response) {
+
+            console.log(response);
+
+            console.log(response.candidates[0].name);
+
+            var nameSpecialist1 = response.candidates[0].name;
+
+            var addressSpecialist1 = response.candidates[0].formatted_address;
+
+            console.log(response.candidates[0].formatted_address);
+
+            $("#specialist-name-1").text(nameSpecialist1);
+
+            $("#specialist-address-1").text(addressSpecialist1);
+        })
+        });
+    
+    </script>
     <script>
       // This example adds a search box to a map, using the Google Place Autocomplete
       // feature. People can enter geographical searches. The search box will return a
